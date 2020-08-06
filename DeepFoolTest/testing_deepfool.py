@@ -13,9 +13,6 @@ import torchvision.models as models
 from PIL import Image
 from deepfool import deepfool
 import os
-import scipy.spatial.distance as dist
-from scipy import spatial
-import cv2
 import time 
 
 
@@ -95,8 +92,12 @@ if __name__ == "__main__":
 	# preprocess original image
 	im = pre_process_origimage("test_im2.jpg")
 
-	# create perturbed image
+
+	# create perturbed image and measure how long it takes to generate adv example
+	start_time = time.time()
 	r, loop_i, label_orig, label_pert, pert_image = deepfool(im, net)
+	time_taken = time.time() - start_time
+
 
 	# print original and predicted labels
 	get_labels(label_orig, label_pert)
@@ -107,9 +108,13 @@ if __name__ == "__main__":
 	# save image
 	final_pert_image.save("pert_image.jpg")
 
+	print ("Time taken to generate adversarial example: ", time_taken)
+
 	# compute cosine similarity between images
 	im2 = Image.open("pert_image.jpg")
 	print ("Cosine Similarity:",calculate_cossim(im,im2))
+
+
 
 
 
