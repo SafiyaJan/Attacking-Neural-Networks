@@ -65,8 +65,8 @@ def get_labels(label_orig, label_pert):
 	print("Original label: ", str_label_orig)
 	print("Perturbed label: ", str_label_pert)
 
-	# print("Original label = ", label_orig)
-	# print("Perturbed label = ", label_pert)
+	print("Original label = ", label_orig)
+	print("Perturbed label = ", label_pert)
 
 
 def calculate_cossim(orig,pert):
@@ -86,7 +86,7 @@ def calculate_cossim(orig,pert):
 if __name__ == "__main__":
 
 	# retrieve pre trained model and set to eval mode
-	net = models.vgg19(pretrained=True)
+	net = models.vgg16(pretrained=True)
 	net.eval()
 
 	# preprocess original image
