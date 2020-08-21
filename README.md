@@ -1,3 +1,21 @@
 # Attacking-Neural-Networks
+Testing DNNs is not however a trivial task, as research highlights the many glaring susceptibilities of DNNs to adversarial attacks in image classification applications. These attacks entail applying a small, visually imperceptible perturbation to the input image such that the neural network outputs a misclassification. Such attacks can be catastrophic in safety-critical situations such as autonomous vehicles, aviation, medical technology, defense systems, etc. 
 
-Deep neural networks (DNN) are utilized in a plethora of applications, specifically in the field of image classification as part of an integrated electromechanical system for safety-critical applications. As the core functionality of these models are built using software systems, it is imperative that the underlying architecture is thoroughly tested to prevent malevolent tampering and/or system failures. Testing DNNs are not however a trivial task, as research highlights the many glaring susceptibilities of DNNs to adversarial attacks in image classification applications. These attacks entail applying a small, visually imperceptible perturbation to the input image such that the neural network outputs a misclassification. Such attacks can be catastrophic in safety-critical situations such as autonomous vehicles, aviation, medical technology, defense systems, etc. This paper evaluates the following adversarial attack algorithms on popular open-source DNN models to validate their efficacy in generating high-quality adversarial examples: Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS), Fast Gradient Sign Method (FGSM), DeepFool, and Carlini-Wagner. Evaluation of each algorithm is based on the following criteria: run-time efficiency, performance efficiency, scalability and robustness. Results of the experimental analysis crowned DeepFool as the optimal contender among the listed approaches as it displayed the most balanced performance when evaluated against the specified criteria. Carli-Wagner required the longest execution times to operate and produced decent results, L-BFGS produced the most deceptive perturbations but required an immense amount of time compared to other methods (especially Deepfool, which generated perturbations very quickly), FGSM is very quick but produced inefficient adversarial examples, and DeepFool produced competitive results within a very short period of time.
+This repository contains scripts for adversarial attacks conducted on the following deep neural networks trained on the ImageNet dataset:
+- ResNet50 (97.8MB)
+- InceptionV3 (104 MB)
+- VGG16 (528 MB)
+- VGG19 (548 MB)
+
+The following attacks have been performed using both single images and batch of images:
+- Limited-memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS)
+- Fast Gradient Sign Method (FGSM)
+- DeepFool
+- Carlini-Wagner Attack
+
+We also focused on attacking a robust model trained on the CIFAR10 data and the paper outlining the model can be found here:
+- **Towards Deep Learning Models Resistant to Adversarial Attacks**, *Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, Adrian Vladu* <br>
+- Paper link: https://arxiv.org/abs/1706.06083.
+
+
+
