@@ -1,5 +1,5 @@
 # Attacking-Neural-Networks
-Testing DNNs is not however a trivial task, as research highlights the many glaring susceptibilities of DNNs to adversarial attacks in image classification applications. These attacks entail applying a small, visually imperceptible perturbation to the input image such that the neural network outputs a misclassification. Such attacks can be catastrophic in safety-critical situations such as autonomous vehicles, aviation, medical technology, defense systems, etc. 
+Testing DNNs is not a trivial task, as research highlights the many glaring susceptibilities of DNNs to adversarial attacks in image classification applications. These attacks entail applying a small, visually imperceptible perturbation to the input image such that the neural network outputs a misclassification. Such attacks can be catastrophic in safety-critical situations such as autonomous vehicles, aviation, medical technology, defense systems, etc. 
 
 This repository contains scripts for adversarial attacks conducted on the following deep neural networks trained on the ImageNet dataset:
 - ResNet50 (97.8MB)
